@@ -47,6 +47,6 @@
 
 </div>
 <div class="add-btn-section" mat-dialog-actions>
-    <button class="add-btn" mat-button>Cancel</button>
+    <button class="add-btn" mat-button (click)="closeDialog()">Cancel</button>
     <button class="add-btn" mat-button (click)="saveUser()" cdkFocusInitial>Save</button>
 </div>

@@ -12,6 +12,7 @@ import { User } from '../../models/user.class';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Firestore, collection, addDoc } from '@angular/fire/firestore';
 import { CommonModule } from '@angular/common';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog-add-user',
@@ -36,8 +37,9 @@ export class DialogAddUserComponent implements OnInit {
   loading = false;
 
   firestore: Firestore = inject(Firestore)
+  dialog: any;
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<DialogAddUserComponent>) { }
 
   ngOnInit(): void {
   }
@@ -51,8 +53,13 @@ export class DialogAddUserComponent implements OnInit {
       console.log('Adding user done', result);
       setTimeout(() => {
         this.loading = false;
+        this.closeDialog();
       }, 2000);
     })
+  }
+
+  closeDialog() {
+    this.dialogRef.close()
   }
 
 }

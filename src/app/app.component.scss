@@ -1,3 +1,5 @@
+@import './../styles.scss';
+
 .mat-draw-container{
     height: 100dvh;
 }
@@ -16,6 +18,10 @@
     border-bottom: 1px solid rgba(0,0,0,0.08);
     padding: 0px 16px 0px 16px;
     min-height: 56px;
+
+    .logo{
+        margin: 12px 0px 12px 0px;
+    }
 }
 
 mat-toolbar, mat-toolbar-row {
@@ -28,11 +34,16 @@ mat-toolbar, mat-toolbar-row {
     margin: 0;
     padding: 0px 0px 0px 0px;
 
+    .nav-icon{
+        color: $prim_color;
+    }
+
     li{
         padding: 0px 16px 0px 16px;
         height: 48px;
         display: flex;
         align-items: center;
+        color: $prim_color;
         cursor: pointer;
 
 
@@ -51,5 +62,5 @@ mat-toolbar, mat-toolbar-row {
 }
 
 .router-container{
-    padding: 16px 0px 0px 56px;
+    padding: 16px 56px 0px 56px;
 }
