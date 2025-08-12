@@ -5,20 +5,10 @@
             <th>email</th>
             <th>city</th>
         </tr>
-        <tr>
-            <td>Dodo von Ops</td>
-            <td>döp&#64;doop.com</td>
-            <td>hausen</td>
-        </tr>
-        <tr>
-            <td>Dodo von Ops</td>
-            <td>döp&#64;doop.com</td>
-            <td>hausen</td>
-        </tr>
-        <tr>
-            <td>Dodo von Ops</td>
-            <td>döp&#64;doop.com</td>
-            <td>hausen</td>
+        <tr *ngFor="let user of allUsers" [routerLink]="['/user/', user.costomIdName]">
+            <td>{{ user.firstName }} {{user.lastName}}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.city }}</td>
         </tr>
         
     </table>

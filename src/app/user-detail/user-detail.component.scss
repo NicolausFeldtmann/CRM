@@ -1,0 +1,51 @@
+@import './../../styles.scss';
+
+.user-detail-header{
+    height: 250px;
+    background-color: $cont_color;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 24px 24px 24px 24px;
+    color: white;
+
+    .user-img {
+        width: 70px;
+        height: 100px;
+        border: solid 3px rgb(221, 221, 221); 
+        border-radius: 40px;
+        padding: 5px;
+    }
+
+    .user-info{
+        margin: 0px 24px 0px 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        height: 110px;
+
+        h2{
+            margin: 0;
+        }
+    }
+}
+
+.user-detail{
+    margin: 32px 0px 0px 0px;
+
+    .user-content{
+        margin: 12px 0px 0px 0px;
+
+        p{
+            margin: 0;
+        }
+    }
+}
+
+.pin-right-upper-corner{
+    position: absolute;
+    right: 4px;
+    top: 4px;
+}
+

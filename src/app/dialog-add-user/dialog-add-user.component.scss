@@ -8,7 +8,8 @@
 .add-h1{
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    padding: 24px 24px 0px 24px;
 }
 
 .add-btn-section{
@@ -48,9 +49,10 @@
 }
 
 .add-name{
-    width: 100%;
+    width: 85%;
     display: flex;
     justify-content: center;
+    padding: 0px 24px 0px 24px;
 }
 
 .add-date{

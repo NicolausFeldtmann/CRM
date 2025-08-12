@@ -5,13 +5,21 @@
     <div class="add-name">
         <mat-form-field class="mr-16 add-input-field add-field" appearance="outline">
             <mat-label>First Name</mat-label>
-            <input [disabled]="loading" [(ngModel)]="user.firstName" class="add-input add-field" matInput placeholder="Placeholder">
+            <input [disabled]="loading" [(ngModel)]="user.firstName" class="add-input add-field" matInput placeholder="First name">
             <!-- <mat-hint>Please ebter a name</mat-hint> -->
         </mat-form-field>
         <mat-form-field class="add-input-field add-field" appearance="outline">
             <mat-label>Last Name</mat-label>
-            <input [disabled]="loading" [(ngModel)]="user.lastName" class="add-input" matInput placeholder="Placeholder">
+            <input [disabled]="loading" [(ngModel)]="user.lastName" class="add-input" matInput placeholder="last Name">
             <!-- <mat-hint>Please ebter a name</mat-hint> -->
+        </mat-form-field>
+    </div>
+
+    <div class="add-date">
+        <mat-form-field class="add-input-field address add-field" appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.email" class="add-input" matInput placeholder="E-mail">
+            <!--<mat-hint>Please ebter a name</mat-hint>-->
         </mat-form-field>
     </div>
 
@@ -28,19 +36,19 @@
     <div class="add-adress">
         <mat-form-field class="add-input-field address add-field" appearance="outline">
             <mat-label>Street + House No.</mat-label>
-            <input [disabled]="loading" [(ngModel)]="user.street" class="add-input" matInput placeholder="Placeholder">
+            <input [disabled]="loading" [(ngModel)]="user.street" class="add-input" matInput placeholder="Street + House No.">
             <!--<mat-hint>Please ebter a name</mat-hint>-->
         </mat-form-field>
 
         <mat-form-field class="add-input-field address add-field" appearance="outline">
             <mat-label>Zip Code</mat-label>
-            <input [disabled]=" loading" [(ngModel)]="user.zipCode" class="add-input" matInput placeholder="Placeholder" minlength="5">
+            <input [disabled]=" loading" [(ngModel)]="user.zipCode" class="add-input" matInput placeholder="Zip Code" minlength="5">
             <!--<mat-hint>Please ebter a name</mat-hint>-->
         </mat-form-field>
 
         <mat-form-field class="add-input-field address add-field" appearance="outline">
             <mat-label>City</mat-label>
-            <input [disabled]="loading" [(ngModel)]="user.city" class="add-input" matInput placeholder="Placeholder">
+            <input [disabled]="loading" [(ngModel)]="user.city" class="add-input" matInput placeholder="City">
             <!--<mat-hint>Please ebter a name</mat-hint>-->
         </mat-form-field>
     </div>
