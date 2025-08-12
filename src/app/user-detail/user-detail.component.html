@@ -1,9 +1,9 @@
 <mat-card class="user-detail-header">
-    <button mat-icon-button [matMenuTriggerFor]="menuHead" class="pin-right-upper-corner" (click)="openAddressDialog()">
+    <button mat-icon-button [matMenuTriggerFor]="menuHead" class="pin-right-upper-corner">
         <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menuHead="matMenu">
-        <button mat-menu-item (click)="editMenu()">edit</button>
+        <button mat-menu-item (click)="editUser()">edit</button>
     </mat-menu>
     <img class="user-img" src="./assets/img/user.png" alt="">
 
@@ -16,7 +16,7 @@
 <mat-card class="user-detail">
     <mat-card-header>
         <mat-card-title>Address</mat-card-title>
-        <button mat-icon-button [matMenuTriggerFor]="menu" class="pin-right-upper-corner" (click)="openAddressDialog()">
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="pin-right-upper-corner">
             <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">

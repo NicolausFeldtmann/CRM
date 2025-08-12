@@ -1,0 +1,30 @@
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+<h1 class="add-h1" mat-dialog-title>Edit Address</h1>
+<div class="add-content" mat-dialog-content>
+
+    <div class="add-adress">
+    <mat-form-field class="add-input-field address add-field" appearance="outline">
+        <mat-label>Street + House No.</mat-label>
+        <input [disabled]="loading" [(ngModel)]="user.street" class="add-input" matInput placeholder="Street + House No.">
+        <!--<mat-hint>Please ebter a name</mat-hint>-->
+    </mat-form-field>
+
+    <mat-form-field class="add-input-field address add-field" appearance="outline">
+        <mat-label>Zip Code</mat-label>
+        <input [disabled]=" loading" [(ngModel)]="user.zipCode" class="add-input" matInput placeholder="Zip Code" minlength="5">
+        <!--<mat-hint>Please ebter a name</mat-hint>-->
+    </mat-form-field>
+
+    <mat-form-field class="add-input-field address add-field" appearance="outline">
+        <mat-label>City</mat-label>
+        <input [disabled]="loading" [(ngModel)]="user.city" class="add-input" matInput placeholder="City">
+        <!--<mat-hint>Please ebter a name</mat-hint>-->
+    </mat-form-field>
+    </div>
+
+</div>
+<div class="add-btn-section" mat-dialog-actions>
+    <button class="add-btn" mat-button (click)="closeDialog()">Cancel</button>
+    <button class="add-btn" mat-button (click)="saveUser()" cdkFocusInitial>Save</button>
+</div>
+

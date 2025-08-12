@@ -1,0 +1,39 @@
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+<h1 class="add-h1" mat-dialog-title>Add User</h1>
+<div class="add-content" mat-dialog-content>
+
+    <div class="add-name">
+        <mat-form-field class="mr-16 add-input-field add-field" appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.firstName" class="add-input add-field" matInput placeholder="First name">
+            <!-- <mat-hint>Please ebter a name</mat-hint> -->
+        </mat-form-field>
+        <mat-form-field class="add-input-field add-field" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.lastName" class="add-input" matInput placeholder="last Name">
+            <!-- <mat-hint>Please ebter a name</mat-hint> -->
+        </mat-form-field>
+    </div>
+
+    <div class="add-date">
+        <mat-form-field class="add-input-field address add-field" appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.email" class="add-input" matInput placeholder="E-mail">
+            <!--<mat-hint>Please ebter a name</mat-hint>-->
+        </mat-form-field>
+    </div>
+
+    <div class="add-date">
+    <mat-form-field class="add-input-field add-field" appearance="outline">
+        <mat-label>Birth Date</mat-label>
+        <input [disabled]="loading" [(ngModel)]="birthDate" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <!-- <mat-hint>Please ebter a date</mat-hint> -->
+    </mat-form-field>
+    </div>
+</div>
+<div class="add-btn-section" mat-dialog-actions>
+    <button class="add-btn" mat-button (click)="closeDialog()">Cancel</button>
+    <button class="add-btn" mat-button (click)="saveUser()" cdkFocusInitial>Save</button>
+</div>

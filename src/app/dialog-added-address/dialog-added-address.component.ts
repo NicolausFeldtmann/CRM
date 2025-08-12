@@ -14,11 +14,9 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { Firestore, collection, addDoc } from '@angular/fire/firestore';
 import { CommonModule } from '@angular/common';
 
-
 @Component({
-  selector: 'app-dialog-add-user',
+  selector: 'app-dialog-added-address',
   standalone: true,
-  providers: [provideNativeDateAdapter()],
   imports: [
     MatInputModule,
     MatButtonModule,
@@ -29,18 +27,18 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     FormsModule
   ],
-  templateUrl: './dialog-add-user.component.html',
-  styleUrl: './dialog-add-user.component.scss'
+  templateUrl: './dialog-added-address.component.html',
+  styleUrl: './dialog-added-address.component.scss'
 })
-export class DialogAddUserComponent implements OnInit {
-  user = new User()
+export class DialogAddedAddressComponent implements OnInit {
+user = new User()
   birthDate!: Date;
   loading = false;
 
   firestore: Firestore = inject(Firestore)
   dialog: any;
 
-  constructor(public dialogRef: MatDialogRef<DialogAddUserComponent>) { }
+  constructor(public dialogRef: MatDialogRef<DialogAddedAddressComponent>) { }
 
   ngOnInit(): void {
   }
@@ -62,5 +60,4 @@ export class DialogAddUserComponent implements OnInit {
   closeDialog() {
     this.dialogRef.close()
   }
-
 }
