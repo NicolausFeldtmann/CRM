@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, Output, EventEmitter } from '@angular/core';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,7 +11,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { User } from '../../models/user.class';
 import { FormsModule, NgForm } from '@angular/forms';
-import { Firestore, collection, addDoc } from '@angular/fire/firestore';
+import { Firestore, collection, doc, updateDoc } from '@angular/fire/firestore';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -31,7 +31,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './dialog-added-address.component.scss'
 })
 export class DialogAddedAddressComponent implements OnInit {
-user = new User()
+  @Output() userAdded = new EventEmitter<void>();
+  user!: User
+  userId!: string;
   birthDate!: Date;
   loading = false;
 
@@ -44,17 +46,14 @@ user = new User()
   }
 
   saveUser() {
-    this.user.brithDate = this.birthDate.getTime();
     this.loading = true;
-
-    let userRef = collection(this.firestore, 'users');
-    addDoc(userRef, this.user.toJSON()).then((result) => {
-      console.log('Adding user done', result);
-      setTimeout(() => {
-        this.loading = false;
-        this.closeDialog();
-      }, 2000);
-    })
+    const userDocRef = doc(this.firestore, 'users', this.userId);
+    updateDoc(userDocRef, this.user.toJSON());
+    this.userAdded.emit();
+    setTimeout(() => {
+      this.loading = false;
+      this.closeDialog();
+    }, 2000);
   }
 
   closeDialog() {

@@ -54,11 +54,15 @@ export class UserDetailComponent implements OnInit {
   }
 
   editMenu() {
-    this.dialog.open(DialogAddedAddressComponent);
+    const dialog = this.dialog.open(DialogAddedAddressComponent);
+    dialog.componentInstance.user = new User({...this.user});
+    dialog.componentInstance.userId = this.userId;
   }
 
   editUser() {
-    this.dialog.open(DialogAddedUserComponent);
+    const dialog = this.dialog.open(DialogAddedUserComponent);
+    dialog.componentInstance.user = new User({...this.user});
+    dialog.componentInstance.userId = this.userId;
   }
 
 }

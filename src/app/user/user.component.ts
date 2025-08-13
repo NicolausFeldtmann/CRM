@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { Firestore, collection, collectionData  } from '@angular/fire/firestore';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { subscribe } from 'node:diagnostics_channel';
 
 @Component({
   selector: 'app-user',
@@ -46,6 +47,17 @@ export class UserComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(DialogAddUserComponent);
+    const dialogRef = this.dialog.open(DialogAddUserComponent);
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.loadUsers();
+    })
+  }
+
+  loadUsers() {
+    const userRef = collection(this.firestore, 'users');
+    collectionData(userRef, {idField: 'costomIdName'}).subscribe((changes: any) => {
+      this.allUsers = changes;
+    })
   }
 }

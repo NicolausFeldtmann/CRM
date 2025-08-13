@@ -34,7 +34,6 @@ import { CommonModule } from '@angular/common';
 })
 export class DialogAddUserComponent implements OnInit {
   user = new User()
-  birthDate!: Date;
   loading = false;
 
   firestore: Firestore = inject(Firestore)
@@ -46,7 +45,6 @@ export class DialogAddUserComponent implements OnInit {
   }
 
   saveUser() {
-    this.user.brithDate = this.birthDate.getTime();
     this.loading = true;
 
     let userRef = collection(this.firestore, 'users');
